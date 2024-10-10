@@ -1,0 +1,24 @@
+
+train_dataloader: 
+  dataset: 
+    transforms:
+  
+  collate_fn:
+    type: BatchImageCollateFuncion
+
+  shuffle: True
+  total_batch_size: 16 # total batch size equals to 16 (4 * 4)
+  num_workers: 4
+  drop_last: True
+
+val_dataloader:
+  dataset: 
+    transforms:
+
+  shuffle: False
+  total_batch_size: 16
+  num_workers: 4
+  drop_last: True
+
+  collate_fn:
+    type: BatchImageCollateFuncion

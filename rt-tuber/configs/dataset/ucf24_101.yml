@@ -1,0 +1,41 @@
+task: detection
+
+num_classes: 24
+
+train_dataloader: 
+  type: DataLoader
+  dataset: 
+    type: ucf24_101
+    img_folder: data/ucf24-101
+    ann_file: UCF101v2-GT.pkl
+    opt:
+      dataset: newbasketball
+      split: 1
+      root_dir: /home/ubuntu/lijun/model/model_lijun/rt-tuber
+      K: 32
+      mode: 'train'
+      input_h: 256
+      input_w: 256
+      slow_fast_alpha: 8
+    transforms:
+
+
+val_dataloader:
+  type: DataLoader
+  dataset: 
+    type: ucf24_101
+    img_folder: data/ucf24-101
+    ann_file: UCF101v2-GT.pkl
+    opt:
+      dataset: newbasketball
+      split: 1
+      root_dir: /home/ubuntu/lijun/model/model_lijun/rt-tuber
+      K: 32
+      mode: 'test'
+      input_h: 256
+      input_w: 256
+      slow_fast_alpha: 8
+
+    transforms:
+
+
